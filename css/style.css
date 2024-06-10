@@ -1,3 +1,4 @@
 @import "global.css";
 @import "header/header.css";
-@import "modal.css";
+@import "header/modal.css";
+@import "article-galery/article.css"
