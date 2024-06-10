@@ -16,23 +16,30 @@ function validateFields(fields) {
     }
 }
 
+function showAdminInterface() {
+    window.location.href = '../../pages/admin.html';
+}
+
+function showUserInterface() {
+    window.location.href = '../../pages/user.html';
+}
+
 export default function login(e) {
     e.preventDefault();
 
-    const username = document.getElementById('usernameLogin');
-    const password = document.getElementById('passwordLogin');
-    
+    const username = document.getElementById('usernameLogin').value;
+    const password = document.getElementById('passwordLogin').value;
+    const fields = [document.getElementById('usernameLogin'), document.getElementById('passwordLogin')];
 
-    const fields = [username, password];
-
-    if (fields.some(field => field.value === "")) {
+    if (!username || !password) {
         information.style.color = "#f01010";
         information.innerHTML = "Por favor, preencha todos os campos obrigatórios.";
         validateFields(fields);
         return;
     }
 
-    const storedPassword = localStorage.getItem(username.value);
+
+    const storedPassword = localStorage.getItem(username);
 
     if (!storedPassword) {
         information.style.color = "#f01010";
@@ -40,14 +47,20 @@ export default function login(e) {
         return;
     }
 
-    if (storedPassword !== password.value) {
+    if (storedPassword !== password) {
         information.style.color = "#f01010";
         information.innerHTML = "Senha incorreta";
         return;
     }
 
-    fields.forEach(field => field.value = '');
+    // Limpe os campos após o login bem-sucedido
+    document.getElementById('usernameLogin').value = '';
+    document.getElementById('passwordLogin').value = '';
 
-    information.style.color = "#3cf010";
-    information.innerHTML = "Usuário logado com sucesso!";
+    // Redirecione para a interface apropriada com base no tipo de usuário
+    if (username === "admin") {
+        showAdminInterface();
+    } else {
+        showUserInterface();
+    }
 }

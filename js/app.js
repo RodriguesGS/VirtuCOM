@@ -3,17 +3,13 @@ import register from "./modules/register.js";
 import login from "./modules/login.js";
 import initSlider from "./modules/slider.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Modal initialization
-    initModal();
+initModal();
 
-    // Slider initialization
-    initSlider();
+initSlider();
 
-    // Form submission handlers
-    const registerForm = document.querySelector("#registerModal form");
-    registerForm.addEventListener("submit", register);
+const registerForm = document.querySelector("#registerModal form");
+registerForm.addEventListener("submit", register);
 
-    const loginForm = document.querySelector('#loginModal form');
-    loginForm.addEventListener("submit", login);
-});
+const loginForm = document.querySelector('#loginModal form');
+loginForm.addEventListener("submit", login);
+

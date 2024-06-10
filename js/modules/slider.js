@@ -1,5 +1,5 @@
 export default function initSlider() {
-    const SLIDE_DURATION = 5000;
+    const SLIDE_DURATION = 3000;
 
     let currentIndex = 0;
     const slides = document.querySelectorAll('.slide');
@@ -30,7 +30,7 @@ export default function initSlider() {
 
     const updateBackground = () => {
         const bgImage = slides[currentIndex].getAttribute('data-bg');
-        sliderContainer.style.backgroundImage = `url('${bgImage}')`;
+        sliderContainer.style.backgroundImage = `url('../../assets/${bgImage}')`;
     };
 
     const nextSlide = () => {

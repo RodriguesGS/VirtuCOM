@@ -1,0 +1,30 @@
+.login-in {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.shop, .drop-user {
+    cursor: pointer;
+}
+
+.shop {
+    position: relative;
+}
+
+.shop::before {
+    content: "0";
+    position: absolute;
+    top: -3px;
+    right: -5px;
+    z-index: 1;
+    background-color: var(--cor-principal);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-branco);
+}
