@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
+    <title>VirtuCOM</title>
+</head>
+<body>
+    <header class="container">
+        <div class="header">
+            <a class="title" href="#">virtucom</a>
+
+            <div class="dropDown">
+                <p class="text-drop">Categorias</p>
+                <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1e1e1e"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
+            </div>
+
+            <div class="search">
+                <input type="text" name="src" id="src" placeholder="Pesquisar">
+                <button><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></button>
+            </div>
+
+            <div class="btn-sign">
+                <button data-modal="sign-in">Login</button>
+                <button data-modal="sign-out">Registrar</button>
+            </div>
+        </div>
+    </header>
+
+    <article>
+        
+    </article>
+
+    <div id="loginModal" data-modal="container" class="modal-container">
+        <div class="modal">
+            <button data-modal="closeModal" class="close">X</button>
+    
+            <form action="">
+                <label for="username">Usuário</label>
+                <input type="text" name="usernameLogin" placeholder="Usuário" id="usernameLogin" autocomplete="off">
+    
+                <label for="password">Senha</label>
+                <input type="password" name="passwordLogin" placeholder="Senha" id="passwordLogin">
+    
+                <div class="info-confirm">
+                    <button type="submit">Entrar</button>
+
+                    <span class="infoLogin"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="registerModal" data-modal="container" class="modal-container">
+        <div class="modal">
+            <button data-modal="closeModal" class="close">X</button>
+    
+            <form action="">
+                <label for="username">Usuário</label>
+                <input type="text" name="username" placeholder="Usuário" id="username" autocomplete="off">
+    
+                <label for="password">Senha</label>
+                <input type="password" name="password" placeholder="Senha" id="password">
+    
+                <label for="confirmPassword">Confirme sua senha</label>
+                <input type="password" name="confirmPassword" placeholder="Confirmar a Senha" id="confirmPassword">
+    
+                <div class="info-confirm">
+                    <button type="submit">Registrar</button>
+
+                    <span class="infoRegister"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
