@@ -3,7 +3,7 @@ const information = document.querySelector(".infoLogin");
 function removeBorder(field) {
     field.addEventListener('input', () => {
         information.innerHTML = "";
-        field.style.border = ""; 
+        field.style.border = "";
     });
 }
 
@@ -27,37 +27,37 @@ function showUserInterface() {
 export default function login(e) {
     e.preventDefault();
 
-    const username = document.getElementById('usernameLogin').value;
-    const password = document.getElementById('passwordLogin').value;
-    const fields = [document.getElementById('usernameLogin'), document.getElementById('passwordLogin')];
+    const usernameField = document.getElementById('usernameLogin');
+    const passwordField = document.getElementById('passwordLogin');
+    const username = usernameField.value;
+    const password = passwordField.value;
+    const fields = [usernameField, passwordField];
 
-    if (!username || !password) {
+    if (fields.some(field => field.value === "")) {
         information.style.color = "#f01010";
         information.innerHTML = "Por favor, preencha todos os campos obrigatórios.";
         validateFields(fields);
         return;
     }
 
-
     const storedPassword = localStorage.getItem(username);
 
     if (!storedPassword) {
         information.style.color = "#f01010";
         information.innerHTML = "Usuário não encontrado!";
+        validateFields(fields);
         return;
     }
 
     if (storedPassword !== password) {
         information.style.color = "#f01010";
         information.innerHTML = "Senha incorreta";
+        validateFields(fields);
         return;
     }
 
-    // Limpe os campos após o login bem-sucedido
-    document.getElementById('usernameLogin').value = '';
-    document.getElementById('passwordLogin').value = '';
+    fields.forEach(field => field.value = '');
 
-    // Redirecione para a interface apropriada com base no tipo de usuário
     if (username === "admin") {
         showAdminInterface();
     } else {

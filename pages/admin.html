@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
-    <title>Document</title>
+    <title>Tela admin</title>
 </head>
 <body>
-    <div class="painel">
-        <h1>Painel de controle</h1>
+    <div class="painel-container container">
+        <div class="painel-header">
+            <h1>Painel de controle</h1>
+            <a href="../index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EA3323"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <div class="form-container container">
+        
+        <form id="item-form">
+            <div>
+                <label for="itemName">Nome do Item:</label>
+                <input type="text" id="itemName" required>
+            </div>
+            <div>
+                <label for="itemPrice">Preço:</label>
+                <input type="number" id="itemPrice" required>
+            </div>
+            <button type="submit">Cadastrar Item</button>
+        </form>
     </div>
 </body>
 </html>

@@ -1,0 +1,29 @@
+.painel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.painel-header h1 {
+    font-size: 3rem;
+}
+
+.painel-header h1::after {
+    content: "";
+    display: block;
+    background-color: var(--cor-principal);
+    height: 3px;
+    border-radius: 10px;
+    width: 15rem;
+}
+
+.painel-header svg {
+    width: 40px;
+    height: 40px;
+    transition: fill .3s;
+}
+
+.painel-header svg:hover {
+    fill: #720d04;
+}

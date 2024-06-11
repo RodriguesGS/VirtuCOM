@@ -50,4 +50,6 @@ export default function register(e) {
 
     information.style.color = "#3cf010";
     information.innerHTML = "Usuário cadastrado com sucesso!";
+
+    removeBorder(fields);
 }
