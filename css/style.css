@@ -2,13 +2,16 @@
 @import "header/header.css";
 @import "header/modal.css";
 @import "article-galery/article.css";
+@import "footer.css";
 
 
 /* User logged */
 
 @import "header/headerLogin.css";
+@import "catalog.css";
 
 
 /* Admin logged */
 
-@import "header/headerAdmin.css"
+@import "header/headerAdmin.css";
+@import "sectionAdmin.css"

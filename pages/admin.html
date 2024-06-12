@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
     <title>Tela admin</title>
 </head>
-<body>
+<body id="admin">
     <div class="painel-container container">
         <div class="painel-header">
             <h1>Painel de controle</h1>
@@ -18,18 +18,48 @@
     </div>
 
     <div class="form-container container">
-        
+        <h2>Cadastrar item</h2>
         <form id="item-form">
-            <div>
-                <label for="itemName">Nome do Item:</label>
-                <input type="text" id="itemName" required>
+            <div class="form-group">
+                <input type="text" id="itemName" autocomplete="off" placeholder=" " required>
+                <label for="itemName">Nome</label>
+                <div class="underline"></div>
             </div>
-            <div>
+            <div class="form-group">
+                <input type="text" id="itemDescription" autocomplete="off" placeholder=" " required>
+                <label for="itemDescription">Descrição</label>
+                <div class="underline"></div>
+            </div>
+            <div class="form-group">
+                <input type="number" id="itemPrice" placeholder=" " required>
                 <label for="itemPrice">Preço:</label>
-                <input type="number" id="itemPrice" required>
+                <div class="underline"></div>
             </div>
-            <button type="submit">Cadastrar Item</button>
+            <button type="submit" class="btn-secondary">Cadastrar Item</button>
         </form>
     </div>
+    
+    <div class="table-container container">
+        <h2>Itens Cadastrados</h2>
+        <table id="itemsTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>© 2024 Todos os direitos reservados. Desenvolvido por <a href="https://github.com/RodriguesGS" target="_blank">Gabriel Rodrigues</a></p>
+    </footer>
+
+    <script type="module" src="../js/admin.js"></script>
 </body>
 </html>

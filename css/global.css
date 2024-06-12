@@ -28,6 +28,10 @@ body {
     background-color: var(--cor-cClaro);
 }
 
+body#admin {
+    background-color: var(--cor-branco);
+}
+
 a {
     text-decoration: none;
     color: var(--cor-texto);
@@ -74,4 +78,18 @@ input:focus {
 
 .btn-primary:hover {
     background-color: #eccf2a;
+}
+
+.btn-secondary {
+    background-color: var(--cor-principal);
+    font-size: 1.3rem;
+    border-radius: 15px;
+    transition: .3s;
+    border: 3px solid var(--cor-principal);
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+    background-color: transparent;
 }
