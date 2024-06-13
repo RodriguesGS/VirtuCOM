@@ -54,5 +54,10 @@
 .separate button {
     background-color: var(--cor-principal);
     padding: 5px 10px;
+    transition: .2s;
     border-radius: 10px;
+}
+
+.separate button:hover {
+    background-color: #ffa600;
 }
