@@ -5,12 +5,54 @@ export function initCart() {
     const closeModal = document.querySelector('.closeM');
     const cartItemsContainer = document.getElementById('cart-items');
     const shopIcon = document.querySelector('.shop');
+    const totalCart = document.querySelector(".total");
+    const checkoutModal = document.getElementById('checkout-modal');
+    const closeCheckout = document.querySelector('.closeCheckout');
+    const finishShopButton = document.querySelector('.fin-shop');
     let cartItems = [];
     let totalPrice = 0;
 
     function updateCartCount(count) {
         cartCountSpan.setAttribute('data-shop', count);
         cartCountSpan.textContent = count;
+    }
+
+    function updateTotalPrice(price) {
+        totalPrice += price;
+        const total = totalPrice.toFixed(2).replace('.', ',');
+        totalCart.innerHTML = `Total: R$${total}`;
+    }
+
+    function removeItem(index) {
+        const item = cartItems[index];
+        const itemPrice = parseFloat(item.price.replace('R$', '').replace(',', '.'));
+        totalPrice -= itemPrice;
+        cartItems.splice(index, 1);
+
+        updateCartCount(cartItems.length);
+        updateTotalPrice(0);
+
+        displayCartItems();
+    }
+
+    function displayCartItems() {
+        cartItemsContainer.innerHTML = '';
+        cartItems.forEach((item, index) => {
+            const itemElement = document.createElement('div');
+            itemElement.innerHTML = `
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+                <p class="price">${item.price}</p>
+                <button class="remove-item">Remover</button>
+                <hr>
+            `;
+            itemElement.classList.add("cart-item");
+
+            const removeButton = itemElement.querySelector('.remove-item');
+            removeButton.addEventListener('click', () => removeItem(index));
+
+            cartItemsContainer.appendChild(itemElement);
+        });
     }
 
     addToCartButtons.forEach(button => {
@@ -31,27 +73,12 @@ export function initCart() {
             cartItems.push(item);
 
             updateCartCount(currentCount);
-
-            const total = totalPrice.toFixed(2).replace('.', ',')
-            const totalCart = document.querySelector(".total")
-            
-            totalCart.innerHTML = `R$${total}`
+            updateTotalPrice(0); 
         });
     });
 
     shopIcon.addEventListener('click', () => {
-        cartItemsContainer.innerHTML = '';
-        cartItems.forEach(item => {
-            const itemElement = document.createElement('div')
-            itemElement.innerHTML = `
-                <h3>${item.title}</h3>
-                <p>${item.description}</p>
-                <p class="price">${item.price}</p>
-                <hr>
-            `;
-            itemElement.classList.add("cart-item");
-            cartItemsContainer.appendChild(itemElement);
-        });
+        displayCartItems();
         cartModal.style.display = 'block';
     });
 
@@ -64,6 +91,25 @@ export function initCart() {
             cartModal.style.display = 'none';
         }
     });
+
+    finishShopButton.addEventListener('click', () => {
+        cartModal.style.display = 'none';
+        checkoutModal.style.display = 'block';
+    });
+
+    closeCheckout.addEventListener('click', () => {
+        checkoutModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == checkoutModal) {
+            checkoutModal.style.display = 'none';
+        }
+    });
+
+    function initializeCartCount() {
+        updateCartCount(0);
+    }
 
     initializeCartCount();
 }

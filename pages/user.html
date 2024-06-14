@@ -148,16 +148,52 @@
 
     <div id="cart-modal" class="modal">
         <div class="modal-content">
-            <span class="closeM">X</span>
+            <span class="closeM">&times;</span>
             <h2>Itens no Carrinho</h2>
    
             <div id="cart-items">
             </div>
 
             <div class="cart-total">
-                <span class="total">R$00,00</span>
-                <button>Finalizar compra</button>
+                <span class="total">Total: R$00,00</span>
+                <button class="fin-shop">Ir para Pagamento</button>
             </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal-container">
+        <div class="modal-content">
+            <span class="closeM">&times;</span>
+            <h2>Insira seus dados</h2>
+            
+            <form>
+                <div class="label-inputs">
+                    <div class="input-group">
+                        <label for="name">Nome</label>
+                        <input type="text" name="name" id="name" placeholder="Seu nome" autocomplete="off">
+                    </div>
+    
+                    <div class="input-group">
+                        <label for="tel">Telefone</label>
+                        <input type="text" name="tel" id="tel" placeholder="(44) 9999-9999">
+                    </div>
+                </div>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="contato@gmail.com">
+
+                <div class="input-group">
+                    <label for="payment-method">Método de Pagamento</label>
+                    <select name="payment-method" id="payment-method">
+                        <option value="credit-card">Cartão de Crédito</option>
+                        <option value="debit-card">Cartão de Débito</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank-transfer">Transferência Bancária</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="final-shop">Finalizar compra</button>
+            </form>
         </div>
     </div>
 

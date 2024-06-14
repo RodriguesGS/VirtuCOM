@@ -5,7 +5,7 @@ document.getElementById("item-form").addEventListener("submit", function(e) {
     const itemDescription = document.getElementById('itemDescription').value;
     const itemPrice = document.getElementById('itemPrice').value;
 
-    addItem(itemName, itemDescription, itemPrice)
+    addItem(itemName, itemDescription, itemPrice);
 
     saveItemToLocalStorage(itemName, itemDescription, itemPrice);
 
@@ -64,3 +64,7 @@ function loadItemsFromLocalStorage() {
     const items = JSON.parse(localStorage.getItem('items')) || [];
     items.forEach(item => addItem(item.name, item.description, item.price));
 }
+
+window.deleteItem = deleteItem;
+window.editItem = editItem;
+window.addItem = addItem;

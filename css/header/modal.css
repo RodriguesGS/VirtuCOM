@@ -131,14 +131,15 @@
     border-radius: 10px;
     box-shadow: 0 0 0 4px #00000007;
     position: relative;
-    max-height: 600px;
+    min-height: 300px;
     width: 600px;
-    overflow: hidden; /* Impede o overflow do conteúdo geral */
+    overflow: hidden; 
+    margin: 100px auto;
 }
 
 .modal-content .closeM {
     cursor: pointer;
-    font-size: 1.3rem;
+    font-size: 2.5rem;
     font-family: var(--font-ativo);
     transition: .1s;
     position: absolute;
@@ -155,7 +156,7 @@
 }
 
 #cart-items {
-    max-height: 450px; 
+    max-height: 250px; 
     overflow-y: auto;
 }
 
@@ -175,4 +176,120 @@
 
 .cart-item h3 {
     font-size: 1.2rem;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-total .total {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.cart-total button {
+    background-color: var(--cor-principal);
+    padding: 8px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-ativo);
+    border-radius: 5px;
+    transition: .2s;
+}
+
+.cart-total button:hover {
+    background-color: #eccf2a;
+}
+
+.remove-item {
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.modal-content form label {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.modal-content form input {
+    width: 100%;
+    display: block;
+    margin-top: 5px;
+    background-color: #f8f8f8;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: .2s;
+} 
+
+.modal-content form input:hover {
+    border-color: var(--cor-principal);
+    background-color: #eee;
+}
+
+.modal-content form input:focus {
+    border-color: var(--cor-principal);
+    background-color: #eee;
+} 
+
+.label-inputs {
+    display: flex;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.input-group input {
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.input-group select {
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    font-family: var(--font-ativo);
+    font-weight: 500;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.input-group select:focus {
+    border-color: var(--cor-principal);
+    outline: none;
+}
+
+.input-group select option {
+    font-family: var(--font-ativo);
+    font-size: 1rem;
+}
+
+#final-shop {
+    padding: 10px 25px;
+    background-color: var(--cor-principal);
+    margin: 30px auto;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 5px;
+    font-family: var(--font-ativo);
+    display: flex;
+    transition: .2s;
+}
+
+#final-shop:hover {
+    background-color: #ecb82a;
 }
