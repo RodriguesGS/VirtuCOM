@@ -18,7 +18,7 @@ export function initCart() {
     }
 
     function updateTotalPrice(price) {
-        totalPrice += price;
+        totalPrice = price;
         const total = totalPrice.toFixed(2).replace('.', ',');
         totalCart.innerHTML = `Total: R$${total}`;
     }
@@ -30,7 +30,7 @@ export function initCart() {
         cartItems.splice(index, 1);
 
         updateCartCount(cartItems.length);
-        updateTotalPrice(0);
+        updateTotalPrice(totalPrice);
 
         displayCartItems();
     }
@@ -73,7 +73,7 @@ export function initCart() {
             cartItems.push(item);
 
             updateCartCount(currentCount);
-            updateTotalPrice(0); 
+            updateTotalPrice(totalPrice); 
         });
     });
 
@@ -109,6 +109,7 @@ export function initCart() {
 
     function initializeCartCount() {
         updateCartCount(0);
+        updateTotalPrice(0); // Initialize total price as well
     }
 
     initializeCartCount();

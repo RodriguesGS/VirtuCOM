@@ -1,6 +1,4 @@
 import initModal from "./modules/modal.js";
-import register from "./modules/register.js";
-import login from "./modules/login.js";
 import initSlider from "./modules/slider.js";
 import loadItems from "./user.js";
 import { initCart } from "./modules/cart.js";

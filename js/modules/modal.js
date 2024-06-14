@@ -5,6 +5,8 @@ export default function initModal() {
     const loginModal = document.getElementById('loginModal');
     const registerModal = document.getElementById('registerModal');
 
+
+    // Esconder modal
     function toggleModal(modal) {
         return function(event) {
             event.preventDefault();
@@ -12,6 +14,7 @@ export default function initModal() {
         };
     }
 
+    // Fechar modal ao clicar fora dele
     function closeModal(modal) {
         return function(event) {
             if (event.target === modal) {
@@ -20,14 +23,15 @@ export default function initModal() {
         };
     }
 
-    function addModalEventListeners(openButton, modal) {
+    // Add listener para abrir e fechar modal
+    function addModalListener(openButton, modal) {
         if (openButton && modal) {
             openButton.addEventListener("click", toggleModal(modal));
             modal.addEventListener("click", closeModal(modal));
         }
     }
-
-    function addCloseModalButtonsEventListeners() {
+    
+    function addCloseModal() {
         closeModalButtons.forEach(button => {
             button.addEventListener("click", () => {
                 loginModal.classList.remove("ativo");
@@ -36,7 +40,7 @@ export default function initModal() {
         });
     }
 
-    addModalEventListeners(openLoginButton, loginModal);
-    addModalEventListeners(openRegisterButton, registerModal);
-    addCloseModalButtonsEventListeners();
+    addModalListener(openLoginButton, loginModal);
+    addModalListener(openRegisterButton, registerModal);
+    addCloseModal();
 }

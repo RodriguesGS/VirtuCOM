@@ -5,9 +5,9 @@ import initSlider from './modules/slider.js';
 import loadItems from './user.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadItems();
     initModal();
     initSlider();
+    loadItems();
     
     const registerForm = document.querySelector("#registerModal form");
     registerForm.addEventListener("submit", register);

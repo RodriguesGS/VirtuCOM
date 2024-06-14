@@ -12,6 +12,13 @@ document.getElementById("item-form").addEventListener("submit", function(e) {
     this.reset();
 });
 
+function formatCurrency(value) {
+    return value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+  }
+
 function addItem(name, description, price) {
     const tableBody = document.querySelector("#itemsTable tbody");
     const row = document.createElement("tr");
@@ -19,7 +26,7 @@ function addItem(name, description, price) {
     row.innerHTML = `
     <td>${name}</td>
     <td>${description}</td>
-    <td>${price}</td>
+    <td>${formatCurrency(+price)}</td>
     <td class="actions">
         <button class="edit-btn" onclick="editItem(this)">Editar</button>
         <button class="delete-btn" onclick="deleteItem(this)">Deletar</button>

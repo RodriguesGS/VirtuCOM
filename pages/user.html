@@ -106,10 +106,10 @@
 
             <div class="catalog-item">
                 <img src="../assets/not-found-img.jpg" alt="Imagem não encontrada">
-                <h3>Teclado mecanico gamer</h3>
-                <p class="description">Fizz Rainbow Preto Switch Marrom</p>
+                <h3>Samsung T350</h3>
+                <p class="description">Monitor Gamer, 24", FHD, 75Hz, HDMI, VGA, Freesync, Preto</p>
                 <div class="separate">
-                    <p class="price">R$134,91</p>
+                    <p class="price">R$530,00</p>
                     <button class="add-to-cart">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
                     </button>
@@ -118,10 +118,10 @@
 
             <div class="catalog-item">
                 <img src="../assets/not-found-img.jpg" alt="Imagem não encontrada">
-                <h3>Teclado mecanico gamer</h3>
-                <p class="description">Fizz Rainbow Preto Switch Marrom</p>
+                <h3>Gabinete Gamer C2-2901</h3>
+                <p class="description">Lateral em Acrílico - Usb 3.0 - Preto</p>
                 <div class="separate">
-                    <p class="price">R$134,91</p>
+                    <p class="price">R$135,88</p>
                     <button class="add-to-cart">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
                     </button>
@@ -130,10 +130,10 @@
 
             <div class="catalog-item">
                 <img src="../assets/not-found-img.jpg" alt="Imagem não encontrada">
-                <h3>Teclado mecanico gamer</h3>
-                <p class="description">Fizz Rainbow Preto Switch Marrom</p>
+                <h3>Funko pop! Pokemon</h3>
+                <p class="description">Charmander - #455</p>
                 <div class="separate">
-                    <p class="price">R$134,91</p>
+                    <p class="price">R$127,00</p>
                     <button class="add-to-cart">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
                     </button>
@@ -146,7 +146,7 @@
         <p>© 2024 Todos os direitos reservados. Desenvolvido por <a href="https://github.com/RodriguesGS" target="_blank">Gabriel Rodrigues</a></p>
     </footer>
 
-    <div id="cart-modal" class="modal">
+    <div id="cart-modal" class="modal-container">
         <div class="modal-content">
             <span class="closeM">&times;</span>
             <h2>Itens no Carrinho</h2>
@@ -170,24 +170,24 @@
                 <div class="label-inputs">
                     <div class="input-group">
                         <label for="name">Nome</label>
-                        <input type="text" name="name" id="name" placeholder="Seu nome" autocomplete="off">
+                        <input type="text" name="name" id="name" placeholder="Seu nome" autocomplete="off" required>
                     </div>
     
                     <div class="input-group">
                         <label for="tel">Telefone</label>
-                        <input type="text" name="tel" id="tel" placeholder="(44) 9999-9999">
+                        <input type="text" name="tel" id="tel" placeholder="(44) 9999-9999" required>
                     </div>
                 </div>
 
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="contato@gmail.com">
+                <input type="email" name="email" id="email" placeholder="contato@gmail.com" required>
 
                 <div class="input-group">
                     <label for="payment-method">Método de Pagamento</label>
                     <select name="payment-method" id="payment-method">
                         <option value="credit-card">Cartão de Crédito</option>
                         <option value="debit-card">Cartão de Débito</option>
-                        <option value="paypal">PayPal</option>
+                        <option value="pix">Pix</option>
                         <option value="bank-transfer">Transferência Bancária</option>
                     </select>
                 </div>

@@ -121,7 +121,7 @@
     left: 0;
     z-index: 1000;
     justify-content: center;
-    display: flex;
+    display: none;
     align-items: center;
 }
 
